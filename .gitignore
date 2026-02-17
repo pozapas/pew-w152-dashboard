@@ -1,0 +1,14 @@
+# --- Pew W152 Data (NEVER commit) ---
+*.csv
+*.sav
+*.xlsx
+*.pdf
+ATP W152 Readme.txt
+
+# Temp scripts
+explore.py
+
+# Python
+__pycache__/
+*.pyc
+.env
