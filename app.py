@@ -315,15 +315,12 @@ if page == "Survey Overview":
     # KPI row
     total_weighted = df[W].sum()
     completion_rate = df["INTERVIEW_END_W152"].notna().mean() * 100
-    web_pct = (df["SVYMODE_W152"] == 1).mean() * 100 if "SVYMODE_W152" in df.columns else 0
-    english_pct = (df["LANG_W152"] == 1).mean() * 100 if "LANG_W152" in df.columns else 0
 
-    c1, c2, c3, c4 = st.columns(4)
+    c1, c2, c3 = st.columns(3)
     for col_st, val, lbl in [
         (c1, f"{len(df):,}", "Respondents"),
         (c2, f"{total_weighted:,.0f}", "Weighted N"),
         (c3, f"{completion_rate:.1f}%", "Completion Rate"),
-        (c4, f"{english_pct:.0f}% / {100-english_pct:.0f}%", "English / Spanish"),
     ]:
         col_st.markdown(f"""
         <div class="metric-card">
