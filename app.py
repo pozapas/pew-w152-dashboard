@@ -287,11 +287,11 @@ with st.sidebar:
                 unsafe_allow_html=True)
     page = st.radio(
         "Navigate",
-        ["📋 Survey Overview",
-         "🤖 AI Perceptions",
-         "🚗 Driving Safety",
-         "🔀 Cross-Tabulations",
-         "📊 Statistical Analysis"],
+        ["Survey Overview",
+         "AI Perceptions",
+         "Driving Safety",
+         "Cross-Tabulations",
+         "Statistical Analysis"],
         label_visibility="collapsed",
     )
     st.markdown("<hr style='border-color:rgba(255,255,255,0.08);margin:0.5rem 0;'>",
@@ -303,7 +303,7 @@ with st.sidebar:
 # ═══════════════════════════════════════════════════════════════════════════════
 # PAGE 1: SURVEY OVERVIEW
 # ═══════════════════════════════════════════════════════════════════════════════
-if page == "📋 Survey Overview":
+if page == "Survey Overview":
     # Header
     st.markdown("""
     <div class="header-gradient">
@@ -382,7 +382,7 @@ if page == "📋 Survey Overview":
 # ═══════════════════════════════════════════════════════════════════════════════
 # PAGE 2: AI PERCEPTIONS
 # ═══════════════════════════════════════════════════════════════════════════════
-elif page == "🤖 AI Perceptions":
+elif page == "AI Perceptions":
     st.markdown("""
     <div class="header-gradient">
         <h1>Artificial Intelligence — Public Perceptions &amp; Attitudes</h1>
@@ -543,7 +543,7 @@ elif page == "🤖 AI Perceptions":
 # ═══════════════════════════════════════════════════════════════════════════════
 # PAGE 3: DRIVING SAFETY
 # ═══════════════════════════════════════════════════════════════════════════════
-elif page == "🚗 Driving Safety":
+elif page == "Driving Safety":
     st.markdown("""
     <div class="header-gradient">
         <h1>Driving Safety — American Perceptions</h1>
@@ -619,7 +619,7 @@ elif page == "🚗 Driving Safety":
 # ═══════════════════════════════════════════════════════════════════════════════
 # PAGE 4: CROSS-TABULATIONS
 # ═══════════════════════════════════════════════════════════════════════════════
-elif page == "🔀 Cross-Tabulations":
+elif page == "Cross-Tabulations":
     st.markdown("""
     <div class="header-gradient">
         <h1>Interactive Cross-Tabulations</h1>
@@ -693,7 +693,7 @@ elif page == "🔀 Cross-Tabulations":
 # ═══════════════════════════════════════════════════════════════════════════════
 # PAGE 5: STATISTICAL ANALYSIS
 # ═══════════════════════════════════════════════════════════════════════════════
-elif page == "📊 Statistical Analysis":
+elif page == "Statistical Analysis":
     st.markdown("""
     <div class="header-gradient">
         <h1>Statistical Analysis</h1>
