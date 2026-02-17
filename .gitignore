@@ -1,5 +1,4 @@
-# --- Pew W152 Data (NEVER commit) ---
-*.csv
+# --- Pew W152 Supplementary Files ---
 *.sav
 *.xlsx
 *.pdf
