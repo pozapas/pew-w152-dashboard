@@ -123,11 +123,37 @@ section[data-testid="stSidebar"] .stRadio label {
 # DATA LOADING
 # ═══════════════════════════════════════════════════════════════════════════════
 @st.cache_data(show_spinner="Loading Pew W152 data …")
-def load_data():
-    df = pd.read_csv(C.DATA_FILE, low_memory=False)
-    return df
+def load_data_from_file(path):
+    return pd.read_csv(path, low_memory=False)
 
-df = load_data()
+@st.cache_data(show_spinner="Loading Pew W152 data …")
+def load_data_from_upload(file_bytes):
+    import io
+    return pd.read_csv(io.BytesIO(file_bytes), low_memory=False)
+
+df = None
+
+# Try local file first (works on your machine)
+if C.DATA_FILE.exists():
+    df = load_data_from_file(C.DATA_FILE)
+else:
+    # Cloud deployment: show upload widget
+    st.markdown("""
+    <div class="header-gradient">
+        <h1>📊 Pew W152 Analytics Dashboard</h1>
+        <p>Upload your ATP W152.csv file to get started — data stays in memory only and is never stored on the server.</p>
+    </div>
+    """, unsafe_allow_html=True)
+    uploaded = st.file_uploader(
+        "Upload ATP W152.csv", type=["csv"],
+        help="Your data is processed in-memory only. It is never saved to disk or shared."
+    )
+    if uploaded is not None:
+        df = load_data_from_upload(uploaded.getvalue())
+    else:
+        st.info("👆 Please upload the **ATP W152.csv** file to begin analysis.")
+        st.stop()
+
 W = C.WEIGHT_COL
 
 # ═══════════════════════════════════════════════════════════════════════════════
