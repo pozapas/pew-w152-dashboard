@@ -1,7 +1,7 @@
 """
 Pew W152 American Trends Panel — Interactive Analytics Dashboard
 ================================================================
-A PhD-level, Q1-journal-quality Streamlit application for exploring
+A Streamlit application for exploring
 the August 2024 Pew Research Center Wave 152 survey (N = 5,410).
 
 Two thematic blocks:
